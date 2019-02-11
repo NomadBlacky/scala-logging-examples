@@ -1,0 +1,17 @@
+language: scala
+
+matrix:
+  include:
+    - jdk: oraclejdk8
+      scala: 2.12.8
+    - jdk: openjdk11
+      scala: 2.12.8
+
+script:
+  - curl -L -o ~/bin/mill https://github.com/lihaoyi/mill/releases/download/0.3.6/0.3.6 && chmod +x ~/bin/mill
+  - export PATH=~/bin/mill:$PATH
+  - mill _.run
+
+cache:
+  directories:
+    - $HOME/.coursier
