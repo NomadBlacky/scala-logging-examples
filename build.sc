@@ -1,4 +1,6 @@
-import mill._, scalalib._, scalafmt._
+import mill._
+import mill.scalalib._
+import mill.scalalib.scalafmt._
 
 trait CommonModule extends ScalaModule with ScalafmtModule {
   def scalaVersion = "2.12.8"
@@ -16,6 +18,7 @@ trait CommonModule extends ScalaModule with ScalafmtModule {
 
 object playws extends CommonModule {
   override def ivyDeps = super.ivyDeps() ++ Agg(
-    ivy"com.typesafe.play::play-ahc-ws-standalone:2.0.1"
+    ivy"com.typesafe.play::play-ahc-ws-standalone:2.0.1",
+    ivy"com.fasterxml.jackson.module::jackson-module-scala:2.9.8"
   )
 }
