@@ -24,3 +24,10 @@ object playws extends CommonModule {
 }
 
 object scalaobject extends CommonModule
+
+object scalikejdbc extends CommonModule {
+  override def ivyDeps = super.ivyDeps() ++ Agg(
+    ivy"org.scalikejdbc::scalikejdbc:3.3.2",
+    ivy"com.h2database:h2:1.4.197"
+  )
+}
