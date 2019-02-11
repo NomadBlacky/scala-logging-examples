@@ -7,7 +7,8 @@ trait CommonModule extends ScalaModule with ScalafmtModule {
   def ivyDeps = Agg(
     ivy"ch.qos.logback:logback-classic:1.2.3",
     ivy"net.logstash.logback:logstash-logback-encoder:5.3",
-    ivy"com.typesafe.scala-logging::scala-logging:3.9.2"
+    ivy"com.typesafe.scala-logging::scala-logging:3.9.2",
+    ivy"com.fasterxml.jackson.module::jackson-module-scala:2.9.8"
   )
 
   object test extends TestModule {
@@ -18,7 +19,8 @@ trait CommonModule extends ScalaModule with ScalafmtModule {
 
 object playws extends CommonModule {
   override def ivyDeps = super.ivyDeps() ++ Agg(
-    ivy"com.typesafe.play::play-ahc-ws-standalone:2.0.1",
-    ivy"com.fasterxml.jackson.module::jackson-module-scala:2.9.8"
+    ivy"com.typesafe.play::play-ahc-ws-standalone:2.0.1"
   )
 }
+
+object scalaobject extends CommonModule

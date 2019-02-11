@@ -1,0 +1,20 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+<!--
+        <encoder>
+            <pattern>%-50(%d{HH:mm:ss.SSS} [%thread]) %-5level %logger - %msg%n</pattern>
+        </encoder>
+-->
+
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <jsonGeneratorDecorator class="net.logstash.logback.decorate.PrettyPrintingJsonGeneratorDecorator"/>
+        </encoder>
+
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>
