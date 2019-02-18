@@ -11,6 +11,9 @@ object ScalaObjectLogging extends App with StrictLogging {
 
   // case class
   logger.info(append("user", User(100, "t.kadowaki")), "Scala's case class")
+
+  // Tuple
+  logger.info(append("tuple", (1, "str", 'c', 2.34, List(5,6), Map("key" -> "value"))), "Scala's tuple")
 }
 
 case class User(id: Long, name: String)
